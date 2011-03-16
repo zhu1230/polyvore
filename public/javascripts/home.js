@@ -6,8 +6,7 @@ $(
 				success:function(data){
 					$('#items_content').html(data);
 					// paginate_ajax();
-					$('.dropimg').droppable({ drop: function() { alert('dropped'); }});
-					$('.dragimg').draggable({scroll: false,helper: 'clone' ,opacity: 0.35,revert: 'invalid'  });
+					drag_and_drop();
 				}
 			})
 		
@@ -17,7 +16,25 @@ $(
 		
 		
 	paginate_ajax();
+	drag_and_drop();
+});
+	$('.dragimg').draggable({scroll: false,helper: 'clone' ,revert:'invalid'});
+	});
+	
+function paginate_ajax() {
+	$('.pagination a').live('click',function(){  
+		            $.ajax(this.href,{
+			success:function(data){
+				$('#items_content').html(data);
+				// paginate_ajax();
+			}
+		});  
+		
 
+		            return false;  
+		    });
+}
+function drag_and_drop() {
 	$('.dropimg').droppable({ drop: function(event, ui) { 
 		var clone = ui.helper.clone();
 		if(ui.draggable.hasClass('ui-draggable-dragging'))
@@ -38,20 +55,6 @@ $(
 		
 		}
 		
-	}});
-	$('.dragimg').draggable({scroll: false,helper: 'clone' ,revert:'invalid'});
-	});
-	
-function paginate_ajax() {
-	$('.pagination a').live('click',function(){  
-		            $.ajax(this.href,{
-			success:function(data){
-				$('#items_content').html(data);
-				// paginate_ajax();
-			}
-		});  
-		
-
-		            return false;  
-		    });
+	}
 }
+
