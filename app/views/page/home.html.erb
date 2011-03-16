@@ -1,0 +1,91 @@
+<%=render 'shared/menu'%>
+<%= javascript_include_tag 'home.js' %>
+<div>
+
+    <div style="width:485px; height:495px; float:left;">
+     <div style="height:25px; clear:both;">
+      <div class="teb_menu">Menu itens</div>
+      <div class="teb_menu">Todos Os itens</div>
+      <div class="teb_menu">Incluir itens</div>
+      <div class="teb_menu">Itens Mais usados</div>
+      
+     </div>
+     
+     <div style="height:474px; border:1px solid #808080; overflow:scroll;">
+     <table width="100%" height="53" border="0" cellspacing="0" cellpadding="0" style="color:#8c316a;">
+  <tbody><tr>
+    <td width="10" align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td width="15" align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td width="10" align="left" valign="middle">&nbsp;</td>
+    <td height="25" align="left" valign="middle">Selecione a categoria do item:</td>
+    <td width="15" align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">Selecione a marca</td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <form name="design" id="design" method="post"></form>
+  <tr>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td height="25" align="left" valign="middle"><label>
+	<%=select_tag 'category',options_for_select([['View All',0]])+(options_from_collection_for_select Category.all,'id','cat_name'),:style =>"width:225px;"%>
+    </label></td>
+    <td align="left" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">
+    <select name="select" id="select" style="width:225px;"></select>
+    </td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  
+</tbody></table>
+
+     <div id="site" style="width:440px;  margin-left:20px;">
+     	<div class="top_panel" style="float:left; height:50px;">
+            <a href="#" class="new_img">New</a>
+            <a href="#" class="copy_img">Copy</a>
+            <a href="#" class="remove_img">Remove</a>
+            <a href="#" class="rotateh_img">Horizontal</a>
+            <a href="#" class="rotatev_img">Vertical</a>
+            <a href="#" class="zoomin_img">Zoom In</a>
+            <a href="#" class="zoomout_img">Zoom Out</a>
+            <div style="clear:both"></div><br>
+
+            <a href="#" class="">Publish</a>
+        </div>
+        <div id="items" style='clear:both;'>
+            <div id='items_content' class="dress">
+						<%= render :partial => 'products/mix_all' %>
+                   
+         	</div>   
+	     </div>
+        
+        
+        
+       
+    
+        
+        
+        <div class="cb"></div>
+
+   <!-- <div style="width:150px; margin:10px auto;clear:both;display: block;"> <span><a href="#"><img src="images/icon_1.png" border="0"></a></span> 1 - 2 - 3 - 4 - 5	 <span><a href="#"><img src="images/icon_2.png" border="0"></a></span></div> -->
+    </div>
+  
+  
+
+  
+     </div>
+    
+    </div>
+
+<div style="width:440px; height:495px; float:left; margin-left:15px; border:1px solid #808080;">
+    
+        <div class="dropimg" id="canvas">
+            <div class="draggable-item" style="position: absolute; top: -12px; left: 482.2px; opacity: 1;"></div>
+       </div>
+</div>
+
+</div>

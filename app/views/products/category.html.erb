@@ -1,0 +1,98 @@
+<div class="middle_div">
+   <%=render :partial => 'shared/menu'%>
+    <div>
+      <div style="width:930px;  float:left; margin-left:15px; border:1px solid #808080;">
+        <center class="page">
+        
+        <div class="stdform round_cornered">
+        <table width="749" class="fieldset">
+        	<tbody>
+          	<tr>
+            <td colspan="2"><div id="shop_page" trackcontext="shop">
+             	<div id="left">
+              <div class="filtering">
+              <h4>Search</h4>
+        <form method="get" action="../cgi/shop" enctype="multipart/form-data" class="search">
+          <input autocomplete="off" name="query" class="text query" id="query5067" type="text">
+          <input value="Go" class="searchsubmit" type="submit">
+          <input value="41" name="category_id" style="display: none;" type="hidden">
+        </form>
+      </div>
+      <div class="filtering" id="refinements">
+        <h4 style="display: inline;">Refinements</h4>
+        <div><span class="refinementcontrol_label">Category: </span>  <br class="clear">
+        </div>
+      </div>
+      
+      <div class="filtering" id="category_filter">
+        <h4>Category</h4>
+		        <ul>
+			<%Category.all.each do |c|%>
+			          			<li><%=link_to c.cat_name,category_products_path(:id => c.id)%></li>
+						          	<%end%>
+							        </ul>
+      </div>
+      
+      <div class="filtering">
+        <h4>Price</h4>
+        <ul>
+          <li><a href="#41&amp;price.from=0&amp;price.to=50">under $50</a></li>
+          <li><a href="#41&amp;price.from=50&amp;price.to=100">$50-100</a></li>
+          <li><a href="#41&amp;price.from=100&amp;price.to=250">$100-250</a></li>
+          <li><a href="#41&amp;price.from=250&amp;price.to=500">$250-500</a></li>
+          <li><a href="#41&amp;price.from=500&amp;price.to=1000">$500-1,000</a></li>
+          <li><a href="#41&amp;price.from=1000">over $1,000</a></li>
+        </ul>
+      </div>
+      
+      
+    </div>
+                <div id="right">
+                  <h1>Products</h1>
+                  <div id="results" class="shop_grid">
+                                          
+                                <%@products.each do |p|%>
+						                      
+                                <div class="grid" trackelement="overlay" classname="grid"><%=link_to image_tag(p.attachments.first.pic.url(:home),:size => "200x190"),product_path(p),:title => p.prod_name%>
+                                  <div class="under_shop size_m" trackelement="under" classname="under_shop size_m"><%=p.prod_name%>                                    <div><span class="price" classname="price"><%=p.prod_price%></span>&nbsp;</div>
+                                  </div>
+                                </div>
+								<%end%>
+
+                    										<div class='page'>                    
+							                    <%= will_paginate @products,:class=>"apple_pagination",:params=>{:id=>params[:id]} %>
+							</div>
+                  </div>
+                  
+                </div>
+              </div>
+           	</td>
+        	</tr>
+          	</tbody>
+         </table>
+        </div>
+
+</center>
+</div>
+</div>
+	
+<div class="tex_2">Outros looks com esta peca: </div>
+<div style="height:250px;">
+				<div class="grid" trackelement="overlay" classname="grid"><a href="product-det.php?prodid=107" title="Arco xadrez la&amp;ccedil;o roxo"><img src="http://etrendz.info/polyvore/img/p/721-2210-home.jpg" border="0" width="200" height="200"></a>
+				  <div class="under_shop size_m" trackelement="under" classname="under_shop size_m">Arco xadrez la&amp;ccedil;o roxo					<div><span class="price" classname="price">$R$19,50 </span>&nbsp;</div>
+				  </div>
+				</div>
+						<div class="grid" trackelement="overlay" classname="grid"><a href="product-det.php?prodid=2377" title="Len&amp;ccedil;o de zebra"><img src="http://etrendz.info/polyvore/img/p/969-3283-home.jpg" border="0" width="200" height="200"></a>
+				  <div class="under_shop size_m" trackelement="under" classname="under_shop size_m">Len&amp;ccedil;o de zebra					<div><span class="price" classname="price">$R$39,00 </span>&nbsp;</div>
+				  </div>
+				</div>
+						<div class="grid" trackelement="overlay" classname="grid"><a href="product-det.php?prodid=4775" title="Len&amp;ccedil;o de zebra"><img src="http://etrendz.info/polyvore/img/p/969-3283-home.jpg" border="0" width="200" height="200"></a>
+				  <div class="under_shop size_m" trackelement="under" classname="under_shop size_m">Len&amp;ccedil;o de zebra					<div><span class="price" classname="price">$R$39,00 </span>&nbsp;</div>
+				  </div>
+				</div>
+						<div class="grid" trackelement="overlay" classname="grid"><a href="product-det.php?prodid=2504" title="Len&amp;ccedil;o xadrez roxo e verde "><img src="http://etrendz.info/polyvore/img/p/968-8761-home.jpg" border="0" width="200" height="200"></a>
+				  <div class="under_shop size_m" trackelement="under" classname="under_shop size_m">Len&amp;ccedil;o xadrez roxo e verde 					<div><span class="price" classname="price">$R$32,00 </span>&nbsp;</div>
+				  </div>
+				</div>
+		</div>
+</div>

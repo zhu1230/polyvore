@@ -1,0 +1,83 @@
+
+
+	  	
+					<div class="label-text">
+						<label style="width:100px; float:left">Username</label>
+						<label><%= form.text_field :login %>
+						</label>			 
+					</div>
+					                    
+
+					                                        <div class="label-text">
+						<label style="width:100px; float:left">Email</label>
+						<label><%=form.email_field :email%> 
+						</label>			 
+					</div>
+					
+															
+                                        <div class="label-text">
+						<label style="width:100px; float:left">Password</label>
+						<label><%= form.password_field :password %>
+						</label>			 
+					</div>
+					
+					
+															
+					                     <div class="label-text">
+						<label style="width:100px; float:left">Conf Password</label>
+						<label><%= form.password_field :password_confirmation %>
+						</label>			 
+					</div>
+					
+					
+										                    
+                   	<div class="label-text">
+						<label style="width:100px; float:left">Address</label>
+						<label><%=form.text_area :address%>
+						</label>			 
+					</div>
+					
+					
+                    
+                    <div class="label-text">
+						<label style="width:100px; float:left">Country</label>
+						<label><%=form.text_field :country%>
+						</label>			 
+					</div>
+					
+					
+                    
+                    <div class="label-text">
+						<label style="width:100px; float:left">State</label>
+						<label><%=form.text_field :state%> 
+						</label>			 
+					</div>
+					
+					
+                    
+                    <div class="label-text">
+						<label style="width:100px; float:left">City</label>
+						<label><%=form.text_field :city%> 
+						</label>			 
+					</div>
+					
+					
+					
+                    
+                     <div class="label-text">
+						<label style="width:100px; float:left">Zip Code</label>
+						<label><%=form.text_field :zipcode%>
+						</label>			 
+					</div>
+					
+					
+                    <% if can? :update,@user || User%>					
+					<div class="label-text">
+						<label style="width:100px; float:left">Users Status:</label>
+						<label>
+							<input type="radio" name="active" value="1" checked="checked"> Active
+							<input type="radio" name="active" value="0"> De-active						
+						</label>			 
+					</div>
+					<%end%>				
+					

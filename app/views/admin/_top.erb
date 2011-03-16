@@ -1,0 +1,20 @@
+<div id="header">
+		<div style="float:left"><div class="top_tex">Administration Pannel</div></div>
+		<div class="clear"></div>
+		<div class="menu">
+		<ul>
+			<li><%=link_to 'Home',category_products_path%></li>
+            <li><%=link_to 'ROBO',robos_path%>
+			</li><li><%=link_to 'USER','#'%>
+            	<ul>
+                	<li><%=link_to 'SITE USERS',site_users_path%></li>
+                    <li><%=link_to 'ADMIN USERS',admin_users_path%></li>
+                </ul>
+            </li>
+			
+			 
+			<li><%=link_to 'Logout',logout_path%></li>
+		</ul>
+	</div>
+		
+</div>

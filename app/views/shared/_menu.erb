@@ -1,0 +1,20 @@
+ <div class="menu_tex">
+			<%=link_to 'Home',root_path%>
+    	<a href="#">Monte seu look</a>    
+        <a href="#">Nossos "estlisteas</a>   
+        <a href="#">Looks</a>
+        <%=link_to 'Shop',category_products_path%>
+		<% unless current_user %>
+		 <%=link_to 'Login',login_path %> 
+	      <%=link_to 'Register',new_user_path%> 
+		<%else%>
+		<%=link_to 'admin',robos_path if can? :manager,Product%>
+		<%=link_to 'Logout',logout_path%>
+		<%end%>
+       
+	 
+	        
+</div>
+
+    <div style="height:4px; background:#cdcdcd;"></div>
+    <div class="tex_1">Crie Seu visual combinando roupas de suas marcas preteridas.Tudo com muito estilo E facil el divertido. Basta selecionar O item, arrastar e se divertir.</div>

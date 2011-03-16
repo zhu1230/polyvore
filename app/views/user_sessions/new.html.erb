@@ -1,0 +1,45 @@
+<%=render 'shared/menu'%>
+<div>
+      <div style="width:930px;   float:left; margin-left:15px; border:1px solid #808080;">
+        <center class="page">
+          <%= form_for(@user_session,:url => {:action => "create"}) do |f| %>  
+<%=render 'shared/error_messages',:target=>@user_session %>
+            <div class="stdform round_cornered">
+              <table width="498" class="fieldset">
+                <tbody>
+				  <tr>
+                    <td width="131" class="label"></td>
+                    <td width="355" class="value" height="30"><span id="available_email"></span></td>
+                  </tr>	
+                  <tr>
+                    <td width="131" class="label"></td>
+                    <td width="355" class="value"><h3>Sign in <small>or <%=link_to 'Register',new_user_path%></small></h3></td>
+                  </tr>
+				  
+                  <tr>
+                    <td class="label"><label for="email">Login</label></td>
+                    <td class="value"><%= f.text_field :login %></td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="password">Password</label></td>
+                    <td class="value"><%= f.password_field :password %></td>
+                  </tr>
+                  <tr>
+                    <td class="label"></td>
+                    <td class="value"><input name="login" value="Sign in" id="login" type="submit"></td>
+                  </tr>
+                  <tr>
+                    <td class="label"></td>
+                    <td class="value"><small><a href="forget-pass.php">Forgot password?</a></small></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="spacer">&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+         <% end %>
+        </center>
+      </div>
+    </div>
+<div style='clear:both;'></div>

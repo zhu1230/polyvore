@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag 'thing.css'%>
+<%=render 'shared/menu'%>
+	<div>
+	      <div style="width:930px;  float:left; margin-left:15px; border:1px solid #808080;">
+	        <center class="page">
+	          <div class="stdform round_cornered">
+	            <table width="749" class="fieldset">
+	              <tbody>
+	                <tr>
+	                  <td></td>
+	                  <td colspan=""><div class="page tall">
+	                      <div id="left_top">
+	                        <div class="box">
+	                          <div class="bd">
+	                            <center>
+	                              <div id="thing_img"><%=link_to image_tag(@product.attachments.first.pic.url(:large)),@product.prod_url%> 
+	                            </center>
+	                          </div>
+	                        </div>
+	                      </div>
+	                      <div id="right" trackcontext="right">
+	                        <div id="right_top">
+	                          <div id="metainfo">
+	                            <h1 title="Red Valentino Animal-print satin-twill jacket">
+	                              <%=@product.prod_name%>                           </h1>
+	                            <div class="unit" id="price_and_link"><span class="price">$
+	                              <%=@product.prod_price%>                              .00</span></div>
+	                            <div class="description clear">
+	                              <div class="tease_container ">
+	                                <div class="tease" id="longtext1267" style="max-height: none;">
+	                                 <%=@product.mini_infos%>  </div>
+	                                <div id="more1268" class="tease_more clickable" style="display: none;"></div>
+	                              </div>
+	                            </div>
+	                          </div>
+	                          <br class="clear">
+	                          <div class="dvtItem_shp_Bag" id="ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_WucAddCart1_dvMiniBasket">
+	                            <div class="dvtItem_shp_Bag_right">
+	                              <h4>Price</h4>
+	                              <strong><span class="price">
+	                             <%=@product.prod_price%>                             .00</span></strong> <br>
+	                              <br>
+	                              <br>
+	                            </div>
+	                            <div class="dvtItem_shp_Bag_bottom">
+	                              <div class="unit">  <%=link_to 'Buy At amomuito.com',@product.prod_url,{:rel=>"nofollow" ,:hidefocus=>"1",:class=>"buy_button"}%> </div>
+	                            </div>
+	                          </div>
+	                        </div>
+	                        <div id="right_ad">
+	                          <div style="display: none; visibility: hidden;" class="unit" id="Thing_RHS_IABMediumRect_1271" trackcontext="gam">
+	                            <script>GA_googleFillSlot("Thing_RHS_IABMediumRect")</script>
+	                            <script src="thing_files/ads"></script>
+	                          </div>
+	                          <div style="display: none; visibility: hidden;" class="unit" id="Thing_RHS_SponsoredSet_1272" trackcontext="gam">
+	                            <script>GA_googleFillSlot("Thing_RHS_SponsoredSet")</script>
+	                            <script src="thing_files/ads_003"></script>
+	                          </div>
+	                          <br class="clear">
+	                        </div>
+	                      </div>
+	                      <div style="display: none; visibility: hidden;" class="clear" id="Thing_Bottom_IABLeaderboard_1275" trackcontext="gam">
+	                        <script>GA_googleFillSlot("Thing_Bottom_IABLeaderboard")</script>
+	                        <script src="thing_files/ads_002"></script>
+	                      </div>
+	                    </div></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	        </center>
+	      </div>
+	    </div>

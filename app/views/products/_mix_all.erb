@@ -1,0 +1,8 @@
+<%Category.all.each do |c|%>
+                                <div style="clear:both;float:left; font-size:12px; font-weight:bold; "><%=c.cat_name%></div>
+		<div style="clear:both"></div>
+		<%c.products.limit(5).each do |p|%>
+		<%= render :partial => 'products/mix_product',:locals => {:product => p}%>
+
+		<%end%>
+<%end%> 

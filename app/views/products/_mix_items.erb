@@ -1,0 +1,7 @@
+
+
+		<%products.each do |p|%>
+		<%= render :partial => 'products/mix_product',:locals => {:product => p}%>
+
+		<%end%>
+<div style='clear:both;margin:0px auto;width:100%;'><%=will_paginate @products,:class => 'flickr_pagination pagination ajax'%></div>

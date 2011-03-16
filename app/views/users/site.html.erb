@@ -1,0 +1,22 @@
+
+<table class="listing" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+                    <th width="32" class="first"><input type="checkbox" name="checkall" onclick="checkedAll(form1);"></th>
+					  <th width="98">First Name</th>
+					  <th width="108">Last Name</th>
+                      <th width="147">Email</th>
+					  <th width="66">Password</th>
+                     
+                      <th width="71">Country</th>
+                     
+                      <th width="46">City</th>
+                      
+                      <th width="115">Created On</th>
+					  <th width="49">Status</th>
+                       <th width="75">Verifay</th>
+					  <th width="60">Delete</th>
+					  <th width="55">Edit</th>
+				  </tr>
+                  	
+				<%=render :partial => 'user_item',:collection => @users,:as => :user%>
+                   				  				</tbody></table>

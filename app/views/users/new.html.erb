@@ -1,0 +1,65 @@
+<%=render 'shared/menu'%>
+<div>
+      <div style="width:930px;  float:left; margin-left:15px; border:1px solid #808080;">
+        <center class="page">
+          <% form_for @user, :url => account_path do |f| %>
+<%=render 'shared/error_messages',:target=>@user %>
+            <div class="stdform round_cornered">
+              <table width="749" class="fieldset">
+                <tbody>
+                  <tr>
+                    <td width="144" class="label"></td>
+                    <td width="593" class="value"><h3>Register <small>or <%=link_to 'Sign in',login_path%></small></h3></td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="name">User name<span class="required">*</span></label></td>
+                    <td class="value">
+                    	<%= f.text_field :login %>
+                        <span id="available_name"> </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="placeholder"></td>
+                    <td class="placeholder" id="username1294"></td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="email">Email<span class="required">*</span></label></td>
+                    <td class="value"><%=f.email_field :email%> 
+                      <span id="available_email"></span></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="explain">We will never share your email address with anyone.</td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="password">Password<span class="required">*</span></label></td>
+                    <td class="value"><%= f.password_field :password %>
+                    					<span id="check_password"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="password2">Verify password<span class="required">*</span></label></td>
+                    <td class="value"><%= f.password_field :password_confirmation %>
+                      <span id="verifypassword_password2"></span></td>
+                  </tr>
+                                    <tr>
+                    <td class="label"></td>
+                    <td class="value"><%= f.submit "Register" %></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="explain">By clicking <strong>Register</strong> you are indicating that you have read and agreed to the <a href="cms.php">Terms of Service</a> and <a href="cms.php">Privacy Policy</a>.</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="spacer">&nbsp;</td>
+                  </tr>
+                <input name="src" value="" id="src" type="hidden">
+                <input name="type" value="consumer" id="type" type="hidden">
+                </tbody>
+                
+              </table>
+            </div>
+        <% end %>
+        </center>
+      </div>
+    </div>

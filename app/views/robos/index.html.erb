@@ -1,0 +1,33 @@
+<div id="middle">
+	  <div id="center-column">
+			<div class="top-bar">
+				<a href="robo.html?db=tcat" class="button">TRUNCATE</a>
+				<h1>ROBO(<%=Product.count%>)</h1>
+				<div class="breadcrumbs">Robo details</div>
+			</div> <br>
+		  <!-- <div class="select-bar">
+		    
+				<label>
+					 
+					<input type="text" name="searchtext" value="">
+				</label>
+				<label>
+					<input type="submit" name="Submit" value="Search">
+				</label>
+				
+				
+				</div> -->
+			
+			
+		  
+			<div class="table">
+				<ul>
+					<%@categories.each do |c|%>
+					<li id="lk-home" class="normal"><%=link_to c.cat_name,fetch_robo_path(c)%>---------(<%=c.products.size%> items)</li>
+					<%end%>
+					</ul>
+			</div>
+		 	<% if @num %><div><h1>Have already fetched <%=@num%> items</h1></div><%end%>
+           <div class="top-bar"></div>                    
+	  </div>
+  </div>

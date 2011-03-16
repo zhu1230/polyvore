@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Polyvore</title>
+<%= stylesheet_link_tag 'style.css','shop.css','pagination.css' %>
+<%#= stylesheet_link_tag :all %>
+<%= javascript_include_tag 'jquery.js','jquery-ui.js','jrails.js' %>
+<%#= javascript_include_tag :defaults %>
+<%= csrf_meta_tag %>
+</head>
+
+<body>
+
+<div class='mine_div'>
+
+<%=render 'shared/top'%>
+
+<%=render :partial=>"shared/message_bar"%>
+<%= yield%>
+
+<!--end middle-->
+<%=render 'shared/bottom'%>
+ 
+
+</div>
+</body>
+</html>

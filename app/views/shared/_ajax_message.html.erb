@@ -1,0 +1,23 @@
+<style type="text/css" media="screen">
+	.error-notification {
+	-webkit-box-shadow: black 2px 2px 5px;
+	cursor: pointer;
+	display: none;
+	padding: 15px;
+	position: absolute;
+	z-index: 1;
+	}
+	.supernovabg {
+	background-color: #FE7A15;
+	color: white;
+	}
+</style>
+<script type="text/javascript" charset="utf-8">
+	$$('.error-notification').each(function(s){
+		s.observe('click',function(){
+			s.fade({duration:0.1});
+			s.remove();
+		});
+	});
+</script>
+<div class="error-notification supernovabg" style="display: block;"><h2><%=message%></h2>(点击继续)</div>
