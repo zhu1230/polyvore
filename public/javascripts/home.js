@@ -18,8 +18,6 @@ $(
 	paginate_ajax();
 	drag_and_drop();
 });
-	$('.dragimg').draggable({scroll: false,helper: 'clone' ,revert:'invalid'});
-	});
 	
 function paginate_ajax() {
 	$('.pagination a').live('click',function(){  
@@ -55,6 +53,7 @@ function drag_and_drop() {
 		
 		}
 		
-	}
+	}});
+	$('.dragimg').draggable({scroll: false,helper: 'clone' ,revert:'invalid'});
 }
 
