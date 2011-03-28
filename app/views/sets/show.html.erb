@@ -1,0 +1,51 @@
+<%=render 'shared/menu'%>
+<%= javascript_include_tag 'setshow.js','home2.js' %>
+<%= stylesheet_link_tag 'setshow.css' %>
+<div>
+	<div class='left'>
+		<div class='show'>
+		
+			<div class="vote">
+			    <input type="hidden" value="<%=@makeup.id%>">
+			    <a class="vote-up-off" title="This question is useful and clear (click again to undo)">up vote</a>
+			    <span class="vote-count-post"><%=@makeup.plusminus%></span>
+			    <a class="vote-down-off" title="This question is unclear or not useful (click again to undo)">down vote</a>
+
+			    <!-- <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+			    <div class="favoritecount"><b></b></div>    --> 
+
+			</div>
+		
+			<div class='set'>
+				<%@makeup.items.each do |item|%>
+				<%puts item.height%>
+				<div class='img' style="left:<%=item.left%>px;top:<%=item.top%>px;width:<%=item.width+10%>px;height:<%=item.height+10%>px;<%="position:absolute;filter:progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand');"%>" angle="<%=item.angle%>"><%=link_to image_tag(item.product.attachments.first.pic.url(:home),:size => "#{item.width}x#{item.height}"),product_path(item.product)%></div>
+				<%end%>
+				<%if @makeup.pic.file?%>
+				<div id='upload'><%=image_tag @makeup.pic.url%></div>
+				<%end%>
+			</div>
+		</div>
+		<div class='comments'>
+			<div><div class="titlebar"><span style="color: #da6e7b">Comments</span> (<%=@makeup.comments.size%>)</div></div>
+			<%= render :partial => 'comment',:collection => @makeup.comments%>
+
+			<%if current_user%>
+			<div class='write_comment'>
+				<%=form_tag comment_set_path(@makeup)%>
+				<div class='comment_content'><%=text_area_tag 'comment','',:rows => 6, :cols => 70%></div>
+				<div class='comment_button'><%=submit_tag 'Send'%></div>
+				</form>
+			</div>
+			<%else%>
+			<h4>you must <%=link_to 'login',login_path%> to comment.Or <%=link_to 'create new account',new_user_path%> now.</h4>
+			<%end%>
+		</div>
+	</div>
+	<div class='right'>
+		<div class='title'><h1><%=@makeup.title%></h1></div>
+		<div class='notes'><p><%=@makeup.notes%></p></div>
+		<div class='user'><%="by "+@makeup.user.login%></div>
+		<div class='date'><%=time_ago_in_words @makeup.created_at%> ago</div>
+	</div>
+</div>

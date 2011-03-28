@@ -1,0 +1,87 @@
+.fieldset .label {
+font-weight: bold;
+color: #888;
+vertical-align: middle;
+line-height: 20px;
+text-align: right;
+width: 25%;
+padding-top: 8px;
+}
+td, th {
+display: table-cell;
+vertical-align: inherit;
+}
+.fieldset .value {
+vertical-align: middle;
+text-align: left;
+width: 75%;
+padding-top: 8px;
+}
+.ui-widget-content {
+	background-image: none;
+}
+.ui-dialog .ui-dialog-buttonpane button{
+float: none;
+margin:0px 10px;
+margin-left:20px;
+}
+.handles .n {
+left: 50%;
+margin-top: -5px;
+margin-left: -5px;
+}
+.handles .w {
+top: 50%;
+margin-top: -5px;
+left: -5px;
+}
+.handles .e {
+top: 50%;
+margin-top: -5px;
+right: -5px;
+}
+.handles .nw {
+top : -5px;
+left : -5px;
+}
+.handles .ne {
+top : -5px;
+right : -5px;
+}
+.handles .se {
+bottom : -5px;
+right : -5px;
+}
+.handles .sw {
+bottom : -5px;
+left : -5px;
+}
+.ui-resizable-handle{
+	background-color: #DDD;
+}
+.rotater_layer{
+	position: absolute;
+	border: 1px solid #999;
+}
+.rotater{
+	position: fixed;
+}
+.ui-icon{
+	background-image: none;
+}
+.ui-resizable-se{cursor: se-resize; width: 9px; height: 9px; right: -5px; bottom: -5px; }
+.active .ui-resizable-handle,.active .rotater{
+	display:block;
+}
+.ui-resizable-handle,.rotater{
+	display:none;
+}
+.dragged{
+	padding: 5px;
+}
+.login .label{
+	width:50px;
+}
+.login .value{
+	
+}

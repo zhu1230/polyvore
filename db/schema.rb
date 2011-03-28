@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308113015) do
+ActiveRecord::Schema.define(:version => 20110328154206) do
 
   create_table "admin_users", :force => true do |t|
     t.string  "email"
@@ -59,12 +59,50 @@ ActiveRecord::Schema.define(:version => 20110308113015) do
     t.integer "user_id",                   :null => false
   end
 
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "faq", :primary_key => "faq_id", :force => true do |t|
     t.text    "faq",                     :null => false
     t.text    "answer",                  :null => false
     t.date    "faq_dt",                  :null => false
     t.string  "faq_status", :limit => 0, :null => false
     t.integer "user_id",                 :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "left"
+    t.integer  "top"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "angle"
+    t.integer  "make_up_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "make_ups", :force => true do |t|
+    t.string   "title"
+    t.text     "notes"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   create_table "newsletter_subscriber", :force => true do |t|
@@ -196,5 +234,19 @@ ActiveRecord::Schema.define(:version => 20110308113015) do
     t.string   "zipcode"
     t.boolean  "active"
   end
+
+  create_table "votes", :force => true do |t|
+    t.boolean  "vote",          :default => false
+    t.integer  "voteable_id",                      :null => false
+    t.string   "voteable_type",                    :null => false
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["voteable_id", "voteable_type"], :name => "index_votes_on_voteable_id_and_voteable_type"
+  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], :name => "fk_one_vote_per_user_per_entity", :unique => true
+  add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
 
 end

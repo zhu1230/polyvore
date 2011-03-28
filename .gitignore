@@ -4,3 +4,4 @@ log/*.log
 tmp/**/*
 public/system/pics/*
 db/data.yml
+public/system/uploadpics/*

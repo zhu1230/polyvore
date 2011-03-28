@@ -75,6 +75,17 @@ resources :products do
 	get 'category'
 	get 'cagegory_mix'
 end
+
+end
+resources :sets do
+	member do
+		post 'comment'
+		get 'voteup'
+		get 'votedown'
+	end
+	collection do
+		post 'upload'
+	end
 end
 	scope  "/admin" do
 		resources :robos do

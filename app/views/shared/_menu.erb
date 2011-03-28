@@ -8,7 +8,8 @@
 		 <%=link_to 'Login',login_path %> 
 	      <%=link_to 'Register',new_user_path%> 
 		<%else%>
-		<%=link_to 'admin',robos_path if can? :manager,Product%>
+		<%=link_to 'Upload',new_set_path%>
+		<%=link_to 'Admin',robos_path if can? :manager,Product%>
 		<%=link_to 'Logout',logout_path%>
 		<%end%>
        

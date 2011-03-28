@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	require 'role_model'
+	acts_as_voter
 	# attr_accessor :roles_mask # in real life this would be an persisted attribute
 
     include RoleModel

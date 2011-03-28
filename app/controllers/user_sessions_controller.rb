@@ -12,9 +12,16 @@ class UserSessionsController < ApplicationController
 	# puts current_user_session.user
       flash[:notice] = "Login successful!"
 	  # puts current_user.to_s+"111"
-      redirect_back_or_default user_url(current_user_session.user)
+	respond_to do |wants|
+		wants.html {redirect_back_or_default user_url(current_user_session.user)}
+       wants.text {render :text => "ok:success"}
+	end
     else
-      render :action => :new
+	respond_to do |wants|
+		
+    wants.html { render :action => :new}
+	wants.text {render :text => "error:"+@user_session.errors.full_messages.join('-')}
+	end
     end
   end
 

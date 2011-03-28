@@ -1,0 +1,15 @@
+<%=render 'shared/menu'%>
+<%= stylesheet_link_tag 'upload.css' %>
+<div class='upload_box'>
+	<%form_for :MakeUp,:url =>  upload_sets_path,:html =>{:multipart => true} do |f|%>
+<ul><li>	<div class='label'>title:</div>
+	<div class='value'><%=f.text_field :title%></div></li>
+<li>	<div class='label'>notes:</div>
+	<div class='value'><%=f.text_area :notes,:cols => 50,:rows => 8%></div></li>
+<li><div class='label'>upload file:</div>
+	<div class='value'><%=f.file_field :pic%></div></li>
+	<li >
+	<div style='padding-left:200px;margin-top:40px;'>	<%=f.submit 'Upload Now'%></div>
+	</li></ul>
+	<%end%>
+</div>

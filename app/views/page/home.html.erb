@@ -1,6 +1,17 @@
 <%=render 'shared/menu'%>
-<%= javascript_include_tag 'home.js','jQueryRotateCompressed.2.0.js' %>
-<%= stylesheet_link_tag 'jquery.css' %>
+
+<%#= javascript_include_tag 'jquery.transform.js' %>
+<%= javascript_include_tag 'EventHelpers.js','cssQuery-p.js','sylvester.js','cssSandpaper.js'%>
+<%#= javascript_include_tag 'sylvester.js','jquery.transform.js'%><%= javascript_include_tag 'home2.js' %>
+<%= javascript_include_tag 'home.js' %>
+
+<%#= javascript_include_tag 'jQueryRotateCompressed.2.0.js','excanvas.js' %>
+<%= stylesheet_link_tag 'jquery.css','home.css','reset.css' %>
+<%if current_user%>
+<script type="text/javascript" charset="utf-8">
+	$(document).data('logged',true);
+</script>
+<%end%>
 <div>
 
     <div style="width:485px; height:495px; float:left;">
@@ -55,8 +66,21 @@
             <a href="#" class="zoomout_img">Zoom Out</a>
             <div style="clear:both"></div><br>
 
-            <a href="#" class="">Publish</a>
+            <a href="#" class="publish">Publish</a>
         </div>
+<div id='publish_box' style='display:none;'>
+	<%form_for :MakeUp do |f|%><div >
+		<table  style='margin:0px auto;'><tbody>
+			<tr><td classname="label" class="label"><label for="input585">Title</label></td><td classname="value" class="value"><%=f.text_field :title,{:value => "Welcome to Polyvore!",:size => 20,:maxlength => 255}%></td></tr>
+			<tr><td classname="label" class="label"><label for="input586">Notes</label></td><td classname="value" class="value"><%=f.text_area :notes,:cols => 30,:rows => 5%></td></tr>
+			
+			<!-- <tr><td classname="label" class="label"><label for="error_msg"></label></td><td classname="value" class="value"><span id="error_msg" classname="error" class="seterror"></span></td></tr>
+				<tr><td classname="label" class="label"><label for="input596"></label></td><td classname="value" class="value"><span><input type="button" value="Publish"><input type="button" value="Cancel"></span></td></tr> -->
+			</tbody>
+			</table>
+			</div>
+			<%end%>
+</div>
         <div id="items" style='clear:both;'>
             <div id='items_content' class="dress">
 						<%= render :partial => 'products/mix_all' %>
@@ -85,8 +109,22 @@
 <div style="width:440px; height:495px; float:left; margin-left:15px; border:1px solid #808080;">
     
         <div class="dropimg" id="canvas">
-            <div class="draggable-item" style="position: absolute; top: -12px; left: 482.2px; opacity: 1;"></div>
+            <!-- <div class="draggable-item" style="position: absolute; top: -12px; left: 482.2px; opacity: 1;"></div> -->
        </div>
 </div>
 
 </div>
+<div id='cur' classname="handle n rotate" class="handle n rotate" style="cursor: url(http://www.polyvorecdn.com/rsrc/img/rotate_arrow.cur), crosshair; display: block; visibility: inherit; "></div>
+<div id='login_box' class='login' style='display:none;'><%form_for :user_session do |s|%>
+	<table><tbody><tr><td class='label'>Login:</td>
+		<td class='value'><%=s.text_field :login,:size => 20%></td>
+		</tr>
+		<tr>
+			<td class='label'>Password:</td>
+			<td class='value'><%= s.password_field :password,:size => 20 %></td>
+		</tr>
+		<tr>
+			
+		</tr></tbody></table>
+		<div id='login_error' class='error' style='display:none;margin-bottom:0px;'></div>
+	<%end%></div>

@@ -1,0 +1,149 @@
+.left{
+	float:left;
+	width:480px;
+	margin:10px 10px;
+	padding: 0px;
+}
+.show{
+	
+/*	width:50px;*/
+}
+.vote{
+	width:50px;
+	float:left;
+	height:500px;
+}
+.left .set{
+	float:left;
+	width:400px;
+	height:500px;
+	border: 1px solid #CCC;
+	padding: 0px;
+/*	position: absolute;*/
+}
+.right{
+	float:left;
+	width:300px;
+	margin:10px 20px;
+	line-height:20px;
+}
+.set img{
+	border: none;
+	position: absolute;
+}
+.set .imgover{
+	border: 1px solid #CCC;
+	
+}
+.right .title{
+	font: 25px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+.right .notes{
+	font: 20px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+.right .user,.right .date{
+	float:right;
+	clear:both;
+	font: 18px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+.comments{
+	float:left;
+	width:480px;
+	height:100%;
+/*	position:  ; */
+}
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.commentbox{
+background-color: #ececec;
+width: 450px;
+padding: 10px;
+}
+
+.commentfooter{
+background: url(/images/arrow2.gif) 20px 0 no-repeat; /*20px 0 equals horizontal and vertical position of arrow. Adjust as desired (ie: 20px -5px).*/
+padding-left: 58px;
+padding-top: 1px;
+margin-bottom: 2em;
+font-size: 90%;
+color: #4A4A4A;
+}
+.titlebar {
+margin-top: 0;
+}
+.titlebar {
+font-weight: bold;
+margin: 1em 0;
+text-transform: uppercase;
+letter-spacing: 1.5pt;
+color: #686868;
+font-size: 110%;
+padding-left: 18px;
+border-bottom: 1px solid #DADADA;
+background: white url(/images/squarebullet.png) center left no-repeat;
+}
+.comment_content{
+	float:left;
+	width:480px;
+	
+}
+.comment_button{
+/*position: absolute; */
+bottom: 0; right: 0; 
+	
+/*	height:50px;*/
+}
+.wirte_comment{
+clear:both;
+/*position: absolute;*/
+height:120px;
+}
+.vote {
+text-align: center;
+}
+.vote-up-off,.vote-down-off{
+	background-repeat: no-repeat;
+	overflow: hidden;
+/*	background-position: 0px -265px;*/
+	display: block;
+	margin: 0 auto;
+	width: 41px;
+	height: 25px;
+	cursor: pointer;
+	text-indent: -9999em;
+	font-size: 1px;
+	clear:both;
+}
+.vote-up-off{
+		background-image: url(/images/to_vote_up.png);
+}
+.vote-down-off {
+	background-image: url(/images/to_vote_down.png);
+}
+.vote-down-on {
+	background-image: url(/images/vote_down.png);
+}
+.vote-up-on {
+	background-image: url(/images/vote_up.png);
+}
+.vote-count-post {
+display: block;
+font-size: 240%;
+width:40px;
+height:31px;
+margin-bottom:8px;
+padding: 0;
+border: 0;
+/*font-size: 100%;*/
+vertical-align: baseline;
+background: transparent;
+}
+.vote span {
+display: block;
+color: #808185;
+font-weight: bold;
+}
+.vote-down-off {
+	background-image: url(/images/to_vote_down.png);
+}

@@ -14,6 +14,8 @@ gem 'will_paginate'
 gem 'mimetype-fu'
 gem 'yaml_db'
 gem 'jrails'
+gem 'acts_as_commentable'
+gem 'thumbs_up'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server

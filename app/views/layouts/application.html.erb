@@ -3,9 +3,12 @@
 <head>
 
 <title>Polyvore</title>
-<%= stylesheet_link_tag 'style.css','shop.css','pagination.css' %>
+<%= javascript_include_tag 'jquery.js','jquery-ui.js' %>
+<%= javascript_include_tag 'jquery.alerts.js' %>
+<%= stylesheet_link_tag 'style.css','shop.css','pagination.css','jquery.alerts.css' %>
 <%#= stylesheet_link_tag :all %>
-<%= javascript_include_tag 'jquery.js','jquery-ui.js','jrails.js','jquery-rotate.js' %>
+
+
 <%#= javascript_include_tag :defaults %>
 <%= csrf_meta_tag %>
 </head>
@@ -26,3 +29,4 @@
 </div>
 </body>
 </html>
+<%#= javascript_include_tag 'jquery-rotate.js' %>
