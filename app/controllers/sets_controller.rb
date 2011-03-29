@@ -40,7 +40,7 @@ class SetsController < ApplicationController
 	  	@makeup=MakeUp.new params[:MakeUp]
 	@makeup.user=current_user
 		@makeup.save
-		render :action => :show
+		redirect_to set_url(@makeup)
 	  end
 	  
 	  # POST /models
