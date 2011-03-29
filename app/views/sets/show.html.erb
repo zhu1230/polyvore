@@ -22,7 +22,7 @@
 				<div class='img' style="left:<%=item.left%>px;top:<%=item.top%>px;width:<%=item.width+10%>px;height:<%=item.height+10%>px;<%="position:absolute;filter:progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand');"%>" angle="<%=item.angle%>"><%=link_to image_tag(item.product.attachments.first.pic.url(:home),:size => "#{item.width}x#{item.height}"),product_path(item.product)%></div>
 				<%end%>
 				<%if @makeup.pic.file?%>
-				<div id='upload'><%=image_tag @makeup.pic.url%></div>
+				<div id='upload'><%=image_tag @makeup.pic.url(:large)%></div>
 				<%end%>
 			</div>
 		</div>
